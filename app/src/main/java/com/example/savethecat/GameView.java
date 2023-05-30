@@ -2,6 +2,7 @@ package com.example.savethecat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -11,6 +12,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.core.content.res.ResourcesCompat;
@@ -27,7 +29,7 @@ public class GameView extends View {
     final long UPDATE_MILLIS = 30;
     Runnable runnable;
     Paint textPaint = new Paint();
-    Paint healtPaint = new Paint();
+    Paint healthPaint = new Paint();
     float TEXT_SIZE = 120;
     int points = 0;
     int life = 3;
@@ -63,7 +65,7 @@ public class GameView extends View {
         textPaint.setTextSize(TEXT_SIZE);
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setTypeface(ResourcesCompat.getFont(context, R.font.kenney_blocks));
-        healtPaint.setColor(Color.GREEN);
+        healthPaint.setColor(Color.GREEN);
         random = new Random();
         catX = dWidth / 2 - cat.getWidth() / 2;
         catY = dHeight - ground.getHeight() - cat.getHeight();
@@ -100,16 +102,64 @@ public class GameView extends View {
             }
         }
 
-        for(int i = 0; i < spikes.size(); i++){
-            if(spikes.get(i).spikeX + spikes.get(i).getSpikeWidth() >= catX &&
+        for(int i = 0; i < spikes.size(); i++) {
+            if (spikes.get(i).spikeX + spikes.get(i).getSpikeWidth() >= catX &&
                     spikes.get(i).spikeX <= catX + cat.getWidth() &&
                     spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() >= catY &&
-                    spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() <= catY + cat.getHeight()){
-
-
+                    spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() <= catY + cat.getHeight()) {
+                    life--;
+                    spikes.get(i).resetPosition();
+                    if(life == 0){
+                        Intent intent = new Intent(context, GameOver.class);
+                        intent.putExtra("points",points);
+                        context.startActivity(intent);
+                        ((Activity) context).finish();
+                    }
             }
-
-
         }
+        for(int i = 0; i<explosions.size();i++) {
+            canvas.drawBitmap(explosions.get(i).getExplosion(explosions.get(i).explosionFrame), explosions.get(i).explosionX,
+                    explosions.get(i).explosionY, null);
+            explosions.get(i).explosionFrame++;
+            if(explosions.get(i).explosionFrame> 3){
+                explosions.remove(i);
+            }
+        }
+
+        if(life == 2){
+            healthPaint.setColor(Color.YELLOW);
+        }else if(life == 1){
+            healthPaint.setColor(Color.RED);
+        }
+        canvas.drawRect(dWidth-200,30,dWidth-200+60*life,80,healthPaint);
+        canvas.drawText(""+points,20, TEXT_SIZE, textPaint);
+        handler.postDelayed(runnable, UPDATE_MILLIS);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float touchX = event.getX();
+        float touchY = event.getY();
+        if(touchY>= catY){
+            int action = event.getAction();
+            if(action == MotionEvent.ACTION_DOWN){
+                oldX = event.getX();
+                oldCatX= catX;
+            }
+            if(action ==MotionEvent.ACTION_MOVE){
+                float shift = oldX- touchX;
+                float newCatX = oldCatX - shift;
+                if(newCatX <= 0) {
+                    catX=0;}
+                else if(newCatX >= dWidth - cat.getWidth()){
+                    catX = dWidth - cat.getWidth();
+                }
+                else
+                    catX = newCatX;
+            }
+        }
+        return true;
     }
 }
+
+           
