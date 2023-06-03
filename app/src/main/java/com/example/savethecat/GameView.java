@@ -110,6 +110,21 @@ public class GameView extends View {
                     life--;
                     spikes.get(i).resetPosition();
                     if(life == 0){
+                        // zapis do bazy (String mode, int points, int time_alive, String died_by)
+
+                        // zmienne na potrzeby testow
+                        String mode = "hard";
+                        int time_alive = 60;
+                        String died_by = "barrel";
+
+                        MyDatabaseHelper myDB = new MyDatabaseHelper(context);
+                        myDB.addRun(mode, points, time_alive, died_by);
+
+
+
+
+
+                        //
                         Intent intent = new Intent(context, GameOver.class);
                         intent.putExtra("points",points);
                         context.startActivity(intent);
@@ -140,13 +155,13 @@ public class GameView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float touchX = event.getX();
         float touchY = event.getY();
-        if(touchY>= catY){
+        if(touchY >= catY){
             int action = event.getAction();
             if(action == MotionEvent.ACTION_DOWN){
                 oldX = event.getX();
                 oldCatX= catX;
             }
-            if(action ==MotionEvent.ACTION_MOVE){
+            if(action == MotionEvent.ACTION_MOVE){
                 float shift = oldX- touchX;
                 float newCatX = oldCatX - shift;
                 if(newCatX <= 0) {
