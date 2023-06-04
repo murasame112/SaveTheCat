@@ -41,9 +41,18 @@ public class GameView extends View {
     ArrayList<Spike> spikes;
     ArrayList<Explosion> explosions;
 
-    public GameView(Context context) {
+    public boolean isEasyMode;
+
+
+
+
+    public GameView(Context context, boolean isEasyMode) {
         super(context);
         this.context = context;
+
+        this.isEasyMode = isEasyMode;
+
+
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
         cat = BitmapFactory.decodeResource(getResources(), R.drawable.cat);
@@ -72,7 +81,7 @@ public class GameView extends View {
         spikes = new ArrayList<>();
         explosions = new ArrayList<>();
         for(int i = 0; i < 3; i++){
-            Spike spike = new Spike(context);
+            Spike spike = new Spike(context,isEasyMode);
             spikes.add(spike);
         }
 

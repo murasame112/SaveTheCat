@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,6 +16,7 @@ public class GameOver extends AppCompatActivity {
 
     TextView tvPoints;
     TextView tvHighest;
+
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
 
@@ -29,15 +31,16 @@ public class GameOver extends AppCompatActivity {
         int points = getIntent().getExtras().getInt("points");
         tvPoints.setText("" + points);
         sharedPreferences = getSharedPreferences("my_pref",0);
-        int highest = sharedPreferences.getInt("Najwyższy",0);
+        int highest = sharedPreferences.getInt("Twój rekord: ",0);
         if(points> highest) {
             ivNewHighest.setVisibility(View.VISIBLE);
             highest = points;
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("Najwyższy",highest);
+            editor.putInt("Twój rekord: ",highest);
             editor.commit();
         }
-        tvHighest.setText("" + highest);
+            tvHighest.setText("" + highest);
+
 
     }
     public void restart(View view){

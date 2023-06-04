@@ -11,13 +11,31 @@ public class Spike {
     int spikeFrame = 0;
     int spikeX, spikeY, spikeVelocity;
     Random random;
-    public Spike(Context context){
-        spike[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike0);
-        spike[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike1);
-        spike[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike2);
-        random = new Random();
-        resetPosition();
+
+    private boolean isEasyMode;
+
+
+
+    public Spike(Context context,  boolean isEasyMode){
+
+        this.isEasyMode = isEasyMode;
+
+            if(isEasyMode == true) {
+                spike[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike0);
+                spike[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike0);
+                spike[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike0);
+                random = new Random();
+                resetPosition();
+            }else
+            {
+                spike[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike1);
+                spike[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike1);
+                spike[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.spike1);
+                random = new Random();
+                resetPosition();
+            }
     }
+
 
     public Bitmap getSpike(int spikeFrame){
         return spike[spikeFrame];
@@ -34,6 +52,7 @@ public class Spike {
     public void resetPosition() {
         spikeX = random.nextInt(GameView.dWidth - getSpikeWidth());
         spikeY =  -200 + random.nextInt(600) * -1;
-        spikeVelocity = 35 + random.nextInt(16);
+//        spikeVelocity = 15 + random.nextInt(16);
+        spikeVelocity =(isEasyMode ? 15 : 30) + random.nextInt(16) * 2;
     }
 }

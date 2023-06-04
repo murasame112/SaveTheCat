@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="Twój rekord: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvHighest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kenney_blocks"
+                    android:text="10"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Najdłuższy czas przy życiu: "
+                    android:textSize="20sp"
+                    android:layout_gravity="center|left"/>
+
+                <TextView
+                    android:id="@+id/longestTimeAlive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kenney_blocks"
+                    android:text="10"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="Licznik śmierci: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/deathCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kenney_blocks"
+                    android:text="10"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="Śmierć od beczek: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/deathByBarrel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kenney_blocks"
+                    android:text="10"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="Śmierć od kowadeł: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/deathByAnvil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kenney_blocks"
+                    android:text="10"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </TableRow>
+
+
+
+
+        </TableLayout>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU"
+        android:fontFamily="@font/kenney_blocks"
+        android:textSize="32sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#7286D3"
+        android:layout_marginTop="30dp"
+        android:onClick="backToMenu"/>
+
+</LinearLayout>

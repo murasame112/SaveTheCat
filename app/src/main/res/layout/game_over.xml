@@ -1,95 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/restart"
-            android:onClick="restart"
-            android:contentDescription="restart" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/exit"
-            android:onClick="exit"
-            android:contentDescription="exit"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical">
+
         <ImageView
+            android:id="@+id/ivNewHighest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ivNewHighest"
             android:background="@drawable/new_highest"
-            android:visibility="gone" />
-
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible" />
+<!--            gone-->
         <TableLayout
+            android:id="@+id/pointsTable"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="214dp"
+                android:layout_height="match_parent"
                 android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Twoje punkty"
-                    android:textSize="24sp" />
+                    android:text="Twoje punkty: "
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/tvPoints"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
-                    android:text="50"
+                    android:text="10"
                     android:textColor="@android:color/holo_green_dark"
-                    android:textSize="50sp" />
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="71dp"
+                android:layout_height="match_parent"
                 android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
-                    android:text="Najwyższy:"
-                    android:textSize="24sp" />
+                    android:text="Twój rekord: "
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/tvHighest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
-                    android:text="100"
+                    android:text="10"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="24sp" />
-
+                    android:textSize="30sp" />
             </TableRow>
+
         </TableLayout>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="80dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/restart"
+            android:contentDescription="restart"
+            android:onClick="restart"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
+
+
+
     </LinearLayout>
 
 </LinearLayout>
