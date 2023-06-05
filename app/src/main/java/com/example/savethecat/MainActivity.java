@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.this.startActivity(i);
     }
 
-    public void backToMenu(View view){
-        setContentView(R.layout.activity_main);
-    }
+
 
     public void easyMode(View view) {
         isEasyMode = true;

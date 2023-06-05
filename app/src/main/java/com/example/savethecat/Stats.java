@@ -129,4 +129,10 @@ public class Stats extends AppCompatActivity {
 
     }
 
+    public void backToMenu(View view){
+
+        Intent i = new Intent(Stats.this, MainActivity.class);
+        Stats.this.startActivity(i);
+    }
+
 }
