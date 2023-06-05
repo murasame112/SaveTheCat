@@ -13,6 +13,7 @@ import android.view.WindowManager;
 public class MainActivity extends AppCompatActivity {
 
     private boolean isEasyMode = false;
+    private Stats statsView;
 
 
     @Override
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stats(View view) {
-     setContentView(R.layout.stats);
+        Intent i = new Intent(MainActivity.this, Stats.class);
+        MainActivity.this.startActivity(i);
     }
 
     public void backToMenu(View view){

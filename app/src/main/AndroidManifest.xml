@@ -41,6 +41,14 @@
             android:theme="@style/Theme.SaveTheCat">
         </activity>
 
+        <activity
+            android:name=".Stats"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.SaveTheCat">
+        </activity>
+
     </application>
 
 </manifest>

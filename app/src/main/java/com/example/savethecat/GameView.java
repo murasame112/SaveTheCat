@@ -19,6 +19,8 @@ import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class GameView extends View {
@@ -40,8 +42,13 @@ public class GameView extends View {
     float oldCatX;
     ArrayList<Spike> spikes;
     ArrayList<Explosion> explosions;
+    private int time_alive;
+    private String mode;
+    private String died_by;
 
     public boolean isEasyMode;
+
+    private Timer t;
 
 
 
@@ -53,6 +60,14 @@ public class GameView extends View {
         this.isEasyMode = isEasyMode;
 
 
+        time_alive = 0;
+        t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                time_alive++;
+            }
+        }, 0, 1000);
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
         cat = BitmapFactory.decodeResource(getResources(), R.drawable.cat);
@@ -119,12 +134,19 @@ public class GameView extends View {
                     life--;
                     spikes.get(i).resetPosition();
                     if(life == 0){
-                        // zapis do bazy (String mode, int points, int time_alive, String died_by)
 
-                        // zmienne na potrzeby testow
-                        String mode = "hard";
-                        int time_alive = 60;
-                        String died_by = "barrel";
+                        t.cancel();
+                        t.purge();
+                        if(isEasyMode == true){
+                            mode = "easy";
+                            died_by = "barrel";
+                        }else{
+                            mode = "hard";
+                            died_by = "anvil";
+                        }
+
+
+
 
                         MyDatabaseHelper myDB = new MyDatabaseHelper(context);
                         myDB.addRun(mode, points, time_alive, died_by);
@@ -184,6 +206,7 @@ public class GameView extends View {
         }
         return true;
     }
+
 }
 
            
