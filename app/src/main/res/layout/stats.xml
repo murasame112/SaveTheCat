@@ -50,9 +50,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
-
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:text="10"
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -72,8 +72,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -93,8 +93,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -115,8 +115,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -136,8 +136,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -158,8 +158,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -180,8 +180,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -202,8 +202,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -224,8 +224,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
 
@@ -247,8 +247,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
             <TableRow
@@ -269,8 +269,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
 
@@ -292,8 +292,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kenney_blocks"
                     android:text="10"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp" />
+                    android:textColor="@android:color/holo_purple"
+                    android:textSize="26sp" />
             </TableRow>
 
 
@@ -314,7 +314,7 @@
         android:textSize="32sp"
         android:textColor="@android:color/white"
         android:backgroundTint="#7286D3"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
         android:onClick="backToMenu"/>
 
 </LinearLayout>

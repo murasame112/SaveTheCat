@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.core.content.res.ResourcesCompat;
 
@@ -59,7 +60,6 @@ public class GameView extends View {
 
         this.isEasyMode = isEasyMode;
 
-
         time_alive = 0;
         t = new Timer();
         t.schedule(new TimerTask() {
@@ -69,8 +69,20 @@ public class GameView extends View {
             }
         }, 0, 1000);
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background);
+        // TEST
+        if(background == null){
+            Toast.makeText(context, "Błąd wczytywania grafik", Toast.LENGTH_SHORT).show();
+        }
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
+        // TEST
+        if(ground == null){
+            Toast.makeText(context, "Błąd wczytywania grafik", Toast.LENGTH_SHORT).show();
+        }
         cat = BitmapFactory.decodeResource(getResources(), R.drawable.cat);
+        // TEST
+        if(cat == null){
+            Toast.makeText(context, "Błąd wczytywania grafik", Toast.LENGTH_SHORT).show();
+        }
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -99,6 +111,10 @@ public class GameView extends View {
             Spike spike = new Spike(context,isEasyMode);
             spikes.add(spike);
         }
+        if(spikes.isEmpty()){
+            // TEST
+            Toast.makeText(context, "Błąd wczytywania przeszkód", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
@@ -108,6 +124,12 @@ public class GameView extends View {
         canvas.drawBitmap(background, null, rectBackground, null);
         canvas.drawBitmap(ground, null, rectGround, null);
         canvas.drawBitmap(cat, catX, catY, null);
+        if(spikes.size() == 0){
+            // TEST
+
+            Toast.makeText(context, "Błąd wczytywania przeszkód", Toast.LENGTH_SHORT).show();
+
+        }
         for(int i = 0; i < spikes.size(); i++){
             canvas.drawBitmap(spikes.get(i).getSpike(spikes.get(i).spikeFrame), spikes.get(i).spikeX, spikes.get(i).spikeY, null);
             spikes.get(i).spikeFrame++;
@@ -145,17 +167,9 @@ public class GameView extends View {
                             died_by = "anvil";
                         }
 
-
-
-
                         MyDatabaseHelper myDB = new MyDatabaseHelper(context);
                         myDB.addRun(mode, points, time_alive, died_by);
 
-
-
-
-
-                        //
                         Intent intent = new Intent(context, GameOver.class);
                         intent.putExtra("points",points);
                         context.startActivity(intent);

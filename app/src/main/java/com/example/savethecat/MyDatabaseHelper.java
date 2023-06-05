@@ -63,6 +63,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Zapisano poprawnie", Toast.LENGTH_SHORT).show();
         }
 
+        String str = "25";
+        try{
+            int number = Integer.parseInt(str);
+            System.out.println(number); // output = 25
+        }
+        catch (NumberFormatException ex){
+            ex.printStackTrace();
+        }
+
     }
 
     Cursor readAllData(){
@@ -71,6 +80,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = null;
         if(db != null){
             cursor = db.rawQuery(query, null);
+        }else{
+            // TEST
+            Toast.makeText(context, "Niepowodzenie przy odczytwaniu z bazy", Toast.LENGTH_SHORT).show();
+
         }
 
         return cursor;
