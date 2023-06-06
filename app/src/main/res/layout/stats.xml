@@ -43,7 +43,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Twój rekord: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tvHighest"
@@ -64,7 +65,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Twój rekord [Łatwy]: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
 
                 <TextView
                     android:id="@+id/tvHighestEasy"
@@ -85,7 +88,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Twój rekord [Trudny]: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tvHighestHard"
@@ -107,7 +111,8 @@
                     android:layout_height="wrap_content"
                     android:text="Najdłuższy czas przy życiu: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/longestTimeAlive"
@@ -128,7 +133,8 @@
                     android:layout_height="wrap_content"
                     android:text="Najdłuższy czas przy życiu [Łatwy]: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/longestTimeAliveEasy"
@@ -150,7 +156,8 @@
                     android:layout_height="wrap_content"
                     android:text="Najdłuższy czas przy życiu [Trudny]: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/longestTimeAliveHard"
@@ -172,7 +179,8 @@
                     android:layout_height="wrap_content"
                     android:text="Czas w grze: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/timeInGame"
@@ -194,7 +202,8 @@
                     android:layout_height="wrap_content"
                     android:text="Czas w grze [Łatwy]: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/timeInGameEasy"
@@ -216,7 +225,8 @@
                     android:layout_height="wrap_content"
                     android:text="Czas w grze [Trudny]: "
                     android:textSize="20sp"
-                    android:layout_gravity="center|left"/>
+                    android:layout_gravity="center|left"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/timeInGameHard"
@@ -239,7 +249,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Porażki ogółem: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/deathCount"
@@ -261,7 +272,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Śmierć od beczek [Łatwy]: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/deathByBarrel"
@@ -284,7 +296,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|left"
                     android:text="Śmierć od kowadeł [Trudny]: "
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/deathByAnvil"
